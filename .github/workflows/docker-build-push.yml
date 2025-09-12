@@ -19,6 +19,10 @@ jobs:
       contents: read
       packages: write
 
+    strategy:
+      matrix:
+        variant: [noble, focal, jammy, bookworm, bullseye, trixie]
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -39,18 +43,18 @@ jobs:
       with:
         images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
         tags: |
-          type=ref,event=branch
-          type=ref,event=pr
-          type=semver,pattern={{version}}
-          type=semver,pattern={{major}}.{{minor}}
-          type=raw,value=latest,enable={{is_default_branch}}
-          type=raw,value=noble
+          type=ref,event=branch,suffix=-${{ matrix.variant }}
+          type=ref,event=pr,suffix=-${{ matrix.variant }}
+          type=semver,pattern={{version}},suffix=-${{ matrix.variant }}
+          type=semver,pattern={{major}}.{{minor}},suffix=-${{ matrix.variant }}
+          type=raw,value=latest,enable={{is_default_branch}},suffix=-${{ matrix.variant }}
+          type=raw,value=${{ matrix.variant }}
 
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
         context: .
-        file: ./Dockerfile.noble
+        file: ./Dockerfile.${{ matrix.variant }}
         push: true
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
