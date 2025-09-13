@@ -31,5 +31,14 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
+# Install claude-code
+COPY install_nodejs_repo.sh /scripts/
+RUN /scripts/install_nodejs_repo.sh 18 && \
+    apt-get install -y nodejs && \
+    npm install -g @anthropic-ai/claude-code && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
+
+# ------------------------------------------------------------------------------
 # Define default command
 CMD ["/bin/bash"]
