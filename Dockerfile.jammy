@@ -28,6 +28,7 @@ RUN apt-get update && \
       nano \
       ninja-build \
       python3-minimal \
+      tree \
       vim-tiny && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
