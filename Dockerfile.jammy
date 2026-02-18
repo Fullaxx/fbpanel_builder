@@ -16,12 +16,12 @@ RUN apt-get update && \
       build-essential \
       ca-certificates \
       cmake \
-      libcairo2-dev \
       curl \
       doxygen \
       file \
       git \
       less \
+      libcairo2-dev \
       libgdk-pixbuf-xlib-2.0-dev \
       libgtk2.0-dev \
       libgtk-3-dev \
