@@ -1,0 +1,39 @@
+# ------------------------------------------------------------------------------
+# Pull base image
+FROM fedora:43
+LABEL author="Brett Kuskie <fullaxx@gmail.com>"
+
+# ------------------------------------------------------------------------------
+# Update and install development environment
+RUN dnf -y update && \
+    dnf -y install \
+        bash-completion \
+        @development-tools \
+        ca-certificates \
+        cmake \
+        curl \
+        doxygen \
+        file \
+        git \
+        less \
+        cairo-devel \
+        gdk-pixbuf2-devel \
+        gtk2-devel \
+        gtk3-devel \
+        meson \
+        nano \
+        ninja-build \
+        python3 \
+        tree \
+        vim-minimal \
+        libX11-devel \
+        libXpm-devel \
+        libXrandr-devel \
+        libXrender-devel \
+        libXcomposite-devel && \
+    dnf clean all && \
+    rm -rf /var/cache/dnf /var/tmp/* /tmp/*
+
+# ------------------------------------------------------------------------------
+# Define default command
+CMD ["/bin/bash"]

@@ -1,0 +1,44 @@
+# ------------------------------------------------------------------------------
+# Pull base image
+FROM alpine:3.10
+LABEL author="Brett Kuskie <fullaxx@gmail.com>"
+
+# ------------------------------------------------------------------------------
+# Set environment variables
+
+# ------------------------------------------------------------------------------
+# Create a docker image suitable for development
+RUN apk add --no-cache \
+    bash \
+    bash-completion \
+    build-base \
+    ca-certificates \
+    cmake \
+    curl \
+    doxygen \
+    file \
+    git \
+    less \
+    cairo-dev \
+    gdk-pixbuf-dev \
+    gtk+2.0-dev \
+    gtk+3.0-dev \
+    meson \
+    nano \
+    ninja \
+    python3 \
+    tree \
+    vim
+
+# ------------------------------------------------------------------------------
+# If you need X11 headers explicitly
+# libx11-dev \
+# libxpm-dev \
+# libxrandr-dev \
+# libxrender-dev \
+# libxcomposite-dev
+
+
+# ------------------------------------------------------------------------------
+# Define default command
+CMD ["/bin/bash"]
