@@ -16,6 +16,7 @@ RUN apt-get update && \
       build-essential \
       ca-certificates \
       cmake \
+      libcairo2-dev \
       curl \
       doxygen \
       file \
