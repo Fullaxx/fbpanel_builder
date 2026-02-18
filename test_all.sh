@@ -10,4 +10,5 @@ for TAG in ${TAGS}; do
 #  docker run -it --rm -v ./scripts:/scripts ${IMAGE} /scripts/compile_eleksir_mainline.sh
   docker run -it --rm -v ./scripts:/scripts ${IMAGE} /scripts/compile_fullaxx_fbpanel_eleksir.sh
   docker run -it --rm -v ./scripts:/scripts ${IMAGE} /scripts/compile_fullaxx_fbpanel3_berte.sh
+  docker run -it --rm -v ./scripts:/scripts ${IMAGE} /scripts/compile_fullaxx_fbpanel3.sh
 done
