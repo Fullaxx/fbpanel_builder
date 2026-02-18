@@ -17,7 +17,6 @@ RUN apt-get update && \
       ca-certificates \
       cmake \
       curl \
-      dh-cmake \
       doxygen \
       file \
       git \
