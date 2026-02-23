@@ -25,6 +25,7 @@ RUN dnf -y update && \
         nano \
         ninja-build \
         python3 \
+        rpm-build \
         tree \
         vim-minimal \
         libX11-devel \
