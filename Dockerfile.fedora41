@@ -19,6 +19,7 @@ RUN dnf -y update && \
         cairo-devel \
         gdk-pixbuf2-devel \
         gdk-pixbuf2-xlib-devel \
+        alsa-lib-devel \
         gtk2-devel \
         gtk3-devel \
         meson \
