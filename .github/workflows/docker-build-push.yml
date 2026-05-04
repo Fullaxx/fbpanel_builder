@@ -21,7 +21,7 @@ jobs:
 
     strategy:
       matrix:
-        variant: [noble, focal, jammy, bookworm, bullseye, trixie, fedora40, fedora41, fedora42, fedora43]
+        variant: [resolute, noble, focal, jammy, bookworm, bullseye, trixie, fedora40, fedora41, fedora42, fedora43]
 
     steps:
     - name: Checkout repository

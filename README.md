@@ -4,6 +4,7 @@ A docker image specifically created to build fbpanel
 ## Pull the Images or Build them locally
 ### Ubuntu Images
 ```
+docker pull ghcr.io/fullaxx/fbpanel_builder:resolute
 docker pull ghcr.io/fullaxx/fbpanel_builder:noble
 docker pull ghcr.io/fullaxx/fbpanel_builder:jammy
 docker pull ghcr.io/fullaxx/fbpanel_builder:focal
@@ -20,6 +21,7 @@ docker pull ghcr.io/fullaxx/fbpanel_builder:fedora43
 ```
 ### Build locally
 ```
+docker build -f Dockerfile.resolute -t ghcr.io/fullaxx/fbpanel_builder:resolute .
 docker build -f Dockerfile.noble    -t ghcr.io/fullaxx/fbpanel_builder:noble .
 docker build -f Dockerfile.jammy    -t ghcr.io/fullaxx/fbpanel_builder:jammy .
 docker build -f Dockerfile.focal    -t ghcr.io/fullaxx/fbpanel_builder:focal .
