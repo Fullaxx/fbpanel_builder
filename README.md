@@ -18,6 +18,9 @@ docker pull ghcr.io/fullaxx/fbpanel_builder:bullseye
 ### Fedora Images
 ```
 docker pull ghcr.io/fullaxx/fbpanel_builder:fedora43
+docker pull ghcr.io/fullaxx/fbpanel_builder:fedora42
+docker pull ghcr.io/fullaxx/fbpanel_builder:fedora41
+docker pull ghcr.io/fullaxx/fbpanel_builder:fedora40
 ```
 ### Build locally
 ```
@@ -29,4 +32,7 @@ docker build -f Dockerfile.trixie   -t ghcr.io/fullaxx/fbpanel_builder:trixie .
 docker build -f Dockerfile.bookworm -t ghcr.io/fullaxx/fbpanel_builder:bookworm .
 docker build -f Dockerfile.bullseye -t ghcr.io/fullaxx/fbpanel_builder:bullseye .
 docker build -f Dockerfile.fedora43 -t ghcr.io/fullaxx/fbpanel_builder:fedora43 .
+docker build -f Dockerfile.fedora42 -t ghcr.io/fullaxx/fbpanel_builder:fedora42 .
+docker build -f Dockerfile.fedora41 -t ghcr.io/fullaxx/fbpanel_builder:fedora41 .
+docker build -f Dockerfile.fedora40 -t ghcr.io/fullaxx/fbpanel_builder:fedora40 .
 ```
